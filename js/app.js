@@ -36,9 +36,13 @@ const header = function () {
 
     // Mobile Dropdown Menu
     const burger = document.querySelector('.js-header-burger')
+    const user = document.querySelector('.js-header-user')
+    const notification = document.querySelector('.js-header-notification')
 
     burger.onclick = (e) => {
         e.target.classList.toggle('active')
+        user.classList.toggle('disable-hidden')
+        notification.classList.toggle('disable-hidden')
     }
 }()
 

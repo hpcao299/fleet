@@ -15,7 +15,7 @@
 <body>
     <div class="app">
         <!-- Header -->
-        <header class="z-50 pt-12 pb-6 text-sm md:py-6">
+        <header class="relative z-50 pt-12 pb-6 text-sm md:py-6">
             <div class="flex items-center container-xl">
                 <div class="mr-auto md:mr-10">
                     <a href="/">
@@ -28,7 +28,7 @@
                     <div class="relative hidden header-item js-header-item md:block">
                         <button class="h-full header-button header-head js-header-head">
                             <span class="transition-200ms-ease">Travelers</span>
-                            <svg class="w-6 h-6 ml-2 icon icon-arrow-down header-head-icon transition-200ms-ease">
+                            <svg class="w-6 h-6 ml-2 icon icon-arrow-down header-head-icon">
                                 <use xlink:href="#icon-arrow-down"></use>
                             </svg>
                         </button>
@@ -67,13 +67,13 @@
                     <a href="/" class="hidden ml-auto header-button md:flex">
                         <span class="transition-200ms-ease">Support</span>
                     </a>
-                    <a href="/" class="hidden ml-10 header-button primary-button md:flex">
-                        <span>List your property</span>
+                    <a href="/" class="hidden ml-10 primary-button md:flex">
+                        List your property
                     </a>
                     <div class="relative ml-6 js-header-item header-item">
                         <button
-                            class="justify-center w-10 h-full js-header-head header-button header-head after:top-0 after:right-0 after:h-3 after:w-3 after:rounded-full after:bg-lightGreen after:absolute">
-                            <svg class="w-6 h-6 icon icon-notification transition-200ms-ease">
+                            class="justify-center w-10 h-full transition-200ms-ease js-header-notification js-header-head header-button header-head after:top-0 after:right-0 after:h-3 after:w-3 after:rounded-full after:bg-lightGreen after:absolute">
+                            <svg class="w-6 h-6 icon icon-notification">
                                 <use xlink:href="#icon-notification"></use>
                             </svg>
                         </button>
@@ -124,15 +124,30 @@
                             <use xlink:href="#icon-user"></use>
                         </svg>
                     </button>
-                    <button class="relative w-8 h-8 ml-5 header-burger js-header-burger md:hidden">
+                    <div class="md:hidden">
+                        <button class="relative w-8 h-8 ml-5 js-header-burger header-burger"></button>
 
                         <div
-                            class="fixed top-[132px] h-screen invisible w-screen opacity-0 dark:bg-dark bg-paper transition-all-300ms-ease header-burger-body">
-                            <a href="/" data-page="/"
-                                class="block w-full h-16 px-8 text-2xl font-bold js-header-travelers-link">Stays</a>
+                            class="absolute left-0 right-0 z-10 invisible pt-5 pb-12 opacity-0 top-full dark:bg-dark bg-paper transition-all-300ms-ease header-burger-body">
+                            <div>
+                                <a href="/" data-page="/"
+                                    class="flex items-center w-full h-16 px-8 text-2xl font-bold header-mobile-menu-links text-grey transition-200ms-ease hover:text-normal js-header-travelers-link">Stays</a>
+                                <a href="/" data-page="/flights"
+                                    class="flex items-center w-full h-16 px-8 text-2xl font-bold header-mobile-menu-links text-grey transition-200ms-ease hover:text-normal js-header-travelers-link">Flights</a>
+                                <a href="/" data-page="/things-to-do"
+                                    class="flex items-center w-full h-16 px-8 text-2xl font-bold header-mobile-menu-links text-grey transition-200ms-ease hover:text-normal js-header-travelers-link">Things
+                                    to do</a>
+                                <a href="/" data-page="/cars"
+                                    class="flex items-center w-full h-16 px-8 text-2xl font-bold header-mobile-menu-links text-grey transition-200ms-ease hover:text-normal js-header-travelers-link">Cars</a>
+                                <a href="/" data-page="/support"
+                                    class="flex items-center w-full h-16 px-8 text-2xl font-bold header-mobile-menu-links text-grey transition-200ms-ease hover:text-normal js-header-travelers-link">Support</a>
+                            </div>
+                            <div class="px-8">
+                                <button class="mt-[189px] primary-button w-full">List your
+                                    property</button>
+                            </div>
                         </div>
-                    </button>
-
+                    </div>
                 </div>
             </div>
         </header>
@@ -141,12 +156,14 @@
         <!-- Content -->
         <div class="content">
             <!-- Preview -->
-            <div class="mb-[136px] container-2xl">
+            <section class="lg:mb-[136px] mb-16 md:mb-24 container-2xl px-2 md:px-0 lg:px-10">
                 <div class="relative">
-                    <img src="./assets/images/main-pic-1.jpeg" alt="Main" class="w-full h-full rounded-3xl">
-                    <div class="absolute inset-0 px-20 py-[145px] dark:text-normal">
-                        <h1 class="max-w-md mb-4 text-8xl">
-                            Air, sleep, dream
+                    <img src="./assets/images/main-pic-1.jpeg" alt="Main"
+                        class="object-cover object-right md:object-center md:h-full h-[780px] md:rounded-3xl rounded-[16px_16px_0_0]">
+                    <div
+                        class="absolute inset-0 py-[120px] px-9 md:py-20 md:px-10 lg:py-[145px] lg:px-20 text-center md:text-left dark:text-normal">
+                        <h1 class="md:max-w-md mb-4 text-[64px] lg:text-[80px] leading-[1] xl:text-8xl">
+                            Air, sleep, <br> dream
                         </h1>
                         <h6 class="mb-6 text-2xl font-thin">Find and book a great experience.</h6>
                         <a href="/" class="blue-button">
@@ -154,45 +171,48 @@
                         </a>
                     </div>
                     <div
-                        class="relative rounded-3xl mt-[-175px] z-10 p-10 bg-blur-paper blur-32 mx-20 shadow-[0px_40px_64px_-32px_rgb(15_15_15_/_10%)] dark:bg-blur-black border border-paper dark:border-lightBlack">
+                        class="relative rounded-3xl md:-mt-[175px] -mt-[170px] z-10 md:p-10 pt-8 px-5 pb-6 bg-blur-paper blur-32 md:mx-20 mx-2 shadow-[0px_40px_64px_-32px_rgb(15_15_15_/_10%)] dark:bg-blur-black border border-paper dark:border-lightBlack">
                         <div
                             class="flex shadow-[inset_0_-1px_0_0_#e6e8ec] mb-6 dark:shadow-[inset_0_-1px_0_0_rgb(119_126_144_/_30%)]">
                             <a href="/" data-page="/"
-                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                class="md:mr-12 mr-auto pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
                                 Stays
                             </a>
                             <a href="/" data-page="/flights"
-                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                class="md:mr-12 mr-auto pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
                                 Flights
                             </a>
                             <a href="/" data-page="/cars"
-                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                class="md:mr-12 mr-auto pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
                                 Cars
                             </a>
                             <a href="/" data-page="/things-to-do"
-                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                class="pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
                                 Things to do
                             </a>
                         </div>
-                        <div class="relative flex h-24">
-                            <div class="flex-[0_0_300px] overflow-hidden location js-location relative js-preview-item">
+                        <div class="relative md:flex">
+                            <div
+                                class="flex-[0_0_300px] overflow-hidden location js-location relative js-preview-item md:h-24 h-16">
                                 <div
                                     class="absolute top-0 left-0 w-full h-full overflow-hidden cursor-pointer rounded-2xl transition-200ms-ease location-head">
-                                    <div class="absolute top-6 left-5 text-lightGrey">
-                                        <svg class="w-6 h-6 icon icon-location">
+                                    <div
+                                        class="absolute left-0 w-6 h-8 top-3 lg:w-8 lg:top-6 md:hidden lg:left-5 text-lightGrey">
+                                        <svg class="w-5 h-5 lg:w-6 lg:h-6 icon icon-location">
                                             <use xlink:href="#icon-location"></use>
                                         </svg>
                                     </div>
                                     <input type="text"
-                                        class="relative z-10 w-full h-full pb-6 pr-4 text-2xl font-bold truncate bg-transparent outline-none cursor-pointer dark:placeholder:text-paper pl-14 rounded-2xl placeholder:text-normal"
+                                        class="relative z-10 w-full h-full pb-4 pl-8 text-lg font-bold truncate bg-transparent outline-none cursor-pointer lg:text-2xl md:pb-6 md:pr-4 dark:placeholder:text-paper md:pl-14 rounded-2xl placeholder:text-normal"
                                         name="location" placeholder="Location">
-                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Where
+                                    <span
+                                        class="absolute text-base bottom-[4px] md:left-0 left-8 font-thin lg:left-14 lg:bottom-5 text-grey">Where
                                         are
                                         you
                                         going?
                                     </span>
                                     <button
-                                        class="absolute z-10 hidden w-8 h-8 clear-btn transition-200ms-ease hover:text-blue top-5 right-5 text-lightGrey">
+                                        class="absolute z-10 hidden clear-btn transition-200ms-ease hover:text-blue top-5 right-5 text-lightGrey">
                                         <svg class="w-6 h-6 icon icon-close-circle">
                                             <use xlink:href="#icon-close-circle"></use>
                                         </svg>
@@ -226,45 +246,51 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="flex flex-1 overflow-hidden">
+                            <div class="flex flex-1 h-16 overflow-hidden md:h-24">
                                 <div class="w-1/2 flex-[0_0_50%] relative cursor-pointer h-full">
-                                    <div class="absolute top-5 left-4 text-lightGrey">
-                                        <svg class="w-6 h-6 icon icon-calendar">
+                                    <div
+                                        class="absolute left-0 w-6 h-8 top-3 lg:w-8 lg:top-5 md:hidden lg:left-4 text-lightGrey">
+                                        <svg class="w-5 h-5 lg:w-6 lg:h-6 icon icon-calendar">
                                             <use xlink:href="#icon-calendar"></use>
                                         </svg>
                                     </div>
                                     <input type="text"
-                                        class="w-full h-full pb-6 pr-4 text-2xl font-bold bg-transparent outline-none cursor-pointer pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
+                                        class="w-full h-full pb-4 pl-8 text-lg font-bold bg-transparent outline-none cursor-pointer lg:text-2xl md:pb-6 md:pr-4 md:pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
                                         placeholder="Check in">
-                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Add
+                                    <span
+                                        class="absolute text-base bottom-[4px] md:left-0 left-8 font-thin lg:left-14 lg:bottom-5 text-grey">Add
                                         date</span>
                                 </div>
                                 <div class="w-1/2 flex-[0_0_50%] relative cursor-pointer h-full">
-                                    <div class="absolute top-5 left-4 text-lightGrey">
-                                        <svg class="w-6 h-6 icon icon-calendar">
+                                    <div
+                                        class="absolute left-0 w-6 h-8 top-3 lg:w-8 lg:top-5 md:hidden lg:left-4 text-lightGrey">
+                                        <svg class="w-5 h-5 lg:w-6 lg:h-6 icon icon-calendar">
                                             <use xlink:href="#icon-calendar"></use>
                                         </svg>
                                     </div>
                                     <input type="text"
-                                        class="w-full h-full pb-6 pr-4 text-2xl font-bold bg-transparent outline-none cursor-pointer pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
+                                        class="w-full h-full pb-4 pl-8 text-lg font-bold bg-transparent outline-none cursor-pointer lg:text-2xl md:pb-6 md:pr-4 md:pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
                                         placeholder="Check out">
-                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Add
+                                    <span
+                                        class="absolute text-base bottom-[4px] md:left-0 left-8 font-thin lg:left-14 lg:bottom-5 text-grey">Add
                                         date</span>
                                 </div>
                             </div>
-                            <div class="flex-[0_0_296px] overflow-hidden js-traveler traveler relative js-preview-item">
+                            <div
+                                class="flex-[0_0_296px] overflow-hidden js-traveler traveler relative js-preview-item md:h-24 h-16">
                                 <div
                                     class="relative h-full cursor-pointer traveler-head js-traveler-head transition-200ms-ease rounded-2xl">
-                                    <div class="absolute top-5 left-4 text-lightGrey">
-                                        <svg class="w-6 h-6 icon icon-user">
+                                    <div
+                                        class="absolute left-0 w-6 h-8 top-3 lg:w-8 lg:top-5 md:hidden lg:left-4 text-lightGrey">
+                                        <svg class="w-5 h-5 lg:w-6 lg:h-6 icon icon-user">
                                             <use xlink:href="#icon-user"></use>
                                         </svg>
                                     </div>
                                     <div
-                                        class="w-full h-full cursor-pointer pt-5 pr-[116px] pl-14 text-2xl font-bold rounded-2xl dark:text-paper js-traveler-result">
+                                        class="flex items-center w-full h-full pb-4 pl-8 text-lg font-bold bg-transparent outline-none cursor-pointer lg:text-2xl md:pb-6 md:pr-4 md:pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper">
                                         Travelers</div>
                                     <span
-                                        class="absolute text-base font-thin left-14 bottom-5 text-grey">Travelers</span>
+                                        class="absolute text-base bottom-[4px] md:left-0 left-8 font-thin lg:left-14 lg:bottom-5 text-grey">Travelers</span>
                                 </div>
                                 <div
                                     class="absolute invisible opacity-0 traveler-body z-20 bottom-[calc(100%_+_16px)] right-0 w-[426px] py-4 px-10 bg-paper shadow-[0px_40px_32px_-24px_rgb(15_15_15_/_12%)] transition-200ms-ease rounded-3xl dark:bg-dark">
@@ -277,7 +303,7 @@
                                         <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                <svg class="w-6 h-6 icon icon-minus-circle">
                                                     <use xlink:href="#icon-minus-circle"></use>
                                                 </svg>
                                             </button>
@@ -286,7 +312,7 @@
                                                 0</div>
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                <svg class="w-6 h-6 icon icon-plus-circle">
                                                     <use xlink:href="#icon-plus-circle"></use>
                                                 </svg>
                                             </button>
@@ -301,7 +327,7 @@
                                         <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                <svg class="w-6 h-6 icon icon-minus-circle">
                                                     <use xlink:href="#icon-minus-circle"></use>
                                                 </svg>
                                             </button>
@@ -310,7 +336,7 @@
                                                 0</div>
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                <svg class="w-6 h-6 icon icon-plus-circle">
                                                     <use xlink:href="#icon-plus-circle"></use>
                                                 </svg>
                                             </button>
@@ -324,7 +350,7 @@
                                         <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                <svg class="w-6 h-6 icon icon-minus-circle">
                                                     <use xlink:href="#icon-minus-circle"></use>
                                                 </svg>
                                             </button>
@@ -333,7 +359,7 @@
                                                 0</div>
                                             <button
                                                 class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
-                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                <svg class="w-6 h-6 icon icon-plus-circle">
                                                     <use xlink:href="#icon-plus-circle"></use>
                                                 </svg>
                                             </button>
@@ -342,7 +368,7 @@
                                 </div>
                             </div>
                             <a href="/"
-                                class="text-paper w-16 h-16 absolute top-1/2 right-5 flex items-center justify-center hover:bg-[#225ffe] rounded-full bg-blue transition-200ms-ease  -translate-y-1/2">
+                                class="text-paper lg:w-16 lg:h-16 absolute top-auto w-14 h-14 right-0 bottom-[2px] lg:top-1/2 lg:right-5 flex items-center justify-center hover:bg-[#225ffe] rounded-full bg-blue transition-200ms-ease  md:-translate-y-1/2">
                                 <svg class="w-6 h-6 icon icon-search">
                                     <use xlink:href="#icon-search"></use>
                                 </svg>
@@ -350,16 +376,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Preview -->
 
             <!-- Adventure -->
-            <div class="container-xl mb-[136px]">
-                <div class="mb-16 text-center">
-                    <h2 class="text-5xl leading-[1.16]">Let’s go on an adventure</h2>
-                    <h6 class="mt-2 text-2xl text-grey">Find and book a great experience</h6>
+            <section class="container-xl lg:mb-[136px] mb-16 md:mb-24">
+                <div class="mb-8 text-center md:mb-16">
+                    <h2 class="md:text-5xl text-[40px] leading-[1.16]">Let’s go on an adventure</h2>
+                    <h6 class="mt-2 text-base md:text-2xl text-grey">Find and book a great experience</h6>
                 </div>
-                <div class="-mx-4 pb-[106px] relative">
+                <div class="-mx-4 md:pb-[106px] pb-20 relative">
                     <div class="adventure js-adventure-slick">
                         <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
                             <div class="w-40 shrink-0">
@@ -453,11 +479,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Adventure -->
 
             <!-- Travel -->
-            <div class="container-xl mb-[136px]">
+            <section class="container-xl mb-[136px]">
                 <div class="mb-16 text-center">
                     <h2 class="text-5xl leading-[1.16]">Travel to make memories all <br> around the world</h2>
                     <h6 class="mt-2 text-2xl text-grey">Find trips that fit a flexible lifestyle</h6>
@@ -557,11 +583,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Travel -->
 
             <!-- Work -->
-            <div class="container-xl mb-[136px]">
+            <section class="container-xl mb-[136px]">
                 <div class="mb-16 text-center">
                     <h2 class="text-5xl leading-[1.16]">How it work</h2>
                     <h6 class="mt-2 text-2xl text-grey">Keep calm & travel on</h6>
@@ -612,11 +638,11 @@
                         </svg>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Work -->
 
             <!-- Live -->
-            <div class="container-xl mb-[136px]">
+            <section class="container-xl mb-[136px]">
                 <div class="mb-16 text-center">
                     <h2 class="text-5xl leading-[1.16]">Live anywhere</h2>
                     <h6 class="mt-2 text-2xl text-grey">Keep calm & travel on</h6>
@@ -657,11 +683,11 @@
                         Load more
                     </button>
                 </div>
-            </div>
+            </section>
             <!-- Live -->
 
             <!-- Browse -->
-            <div class="container-xl mb-[136px]">
+            <section class="container-xl mb-[136px]">
                 <div class="relative">
                     <div class="mb-[70px] pr-[120px]">
                         <h2 class="text-5xl leading-[1.16]">Explore nearby</h2>
@@ -808,11 +834,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Browse -->
 
             <!-- Planning -->
-            <div class="relative pt-[50px] pb-[150px] min-h-[750px] flex items-center">
+            <section class="relative pt-[50px] pb-[150px] min-h-[750px] flex items-center">
                 <div class="container-xl">
                     <div class="max-w-[440px]">
                         <div class="mb-4 text-xs font-bold tracking-wide uppercase">
@@ -850,11 +876,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Planning -->
 
             <!-- View -->
-            <div class="container-xl mb-[136px]">
+            <section class="container-xl mb-[136px]">
                 <div class="flex items-end mb-20">
                     <div class="max-w-[540px] mr-auto">
                         <div class="mb-1 text-sm">fleet travel ui kit</div>
@@ -867,12 +893,12 @@
                     <img src="./assets/images/video-bg.jpeg" alt="Video Bg" class="absolute w-full h-full">
                     <button
                         class="js-video-play-btn absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full shadow-[0px_8px_16px_-8px_rgb(15_15_15_/_10%)] bg-paper text-grey group-hover:text-blue">
-                        <svg class="w-6 h-6 icon icon-play group-hover:scale-[1.2] transition-200ms-ease">
+                        <svg class="w-6 h-6 icon icon-play group-hover:scale-[1.2]">
                             <use xlink:href="#icon-play"></use>
                         </svg>
                     </button>
                 </div>
-            </div>
+            </section>
             <!-- View -->
         </div>
         <!-- Content -->
