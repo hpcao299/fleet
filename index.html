@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./build/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <title>Fleet</title>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="z-50 pt-12 pb-6 text-sm md:py-6">
+            <div class="flex items-center container-xl">
+                <div class="mr-auto md:mr-10">
+                    <a href="/">
+                        <img src="./assets/images/logo-dark.svg" alt="Logo" class="light-image">
+                        <img src="./assets/images/logo-light.svg" alt="Logo" class="dark-image">
+                    </a>
+                </div>
+                <div
+                    class="flex justify-end flex-grow pl-10 md:border-l border-lightWhite dark:border-normal md:justify-start">
+                    <div class="relative hidden header-item js-header-item md:block">
+                        <button class="h-full header-button header-head js-header-head">
+                            <span class="transition-200ms-ease">Travelers</span>
+                            <svg class="w-6 h-6 ml-2 icon icon-arrow-down header-head-icon transition-200ms-ease">
+                                <use xlink:href="#icon-arrow-down"></use>
+                            </svg>
+                        </button>
+                        <div
+                            class="translate-y-[10px] invisible transition-all-300ms-ease opacity-0 z-50 bg-paper p-4 absolute left-[-40px] top-[calc(100%_+_35px)] w-[292px] rounded-[20px] shadow-[0px_40px_32px_-8px_rgb(15_15_15_/_12%)] dark:bg-dark dark:shadow-[0px_10px_32px_#23262f] header-body js-header-body">
+                            <a href="/" data-page="/"
+                                class="flex items-center h-12 px-5 font-sans text-sm font-bold js-header-travelers-link header-traveler-link rounded-3xl text-grey transition-200ms-ease hover:text-normal dark:hover:text-lightWhite">
+                                <svg class="w-6 h-6 mr-3 icon icon-comment">
+                                    <use xlink:href="#icon-comment"></use>
+                                </svg>
+                                <span>Stays</span>
+                            </a>
+                            <a href="/" data-page="/flights"
+                                class="flex items-center h-12 px-5 font-sans text-sm font-bold js-header-travelers-link header-traveler-link rounded-3xl text-grey transition-200ms-ease hover:text-normal dark:hover:text-lightWhite">
+                                <svg class="w-6 h-6 mr-3 icon icon-email">
+                                    <use xlink:href="#icon-email"></use>
+                                </svg>
+                                <span>Flights</span>
+                            </a>
+                            <a href="/" data-page="/things-to-do"
+                                class="flex items-center h-12 px-5 font-sans text-sm font-bold js-header-travelers-link header-traveler-link rounded-3xl text-grey transition-200ms-ease hover:text-normal dark:hover:text-lightWhite">
+                                <svg class="w-6 h-6 mr-3 icon icon-home">
+                                    <use xlink:href="#icon-home"></use>
+                                </svg>
+                                <span>Things to do</span>
+                            </a>
+                            <a href="/" data-page="/cars"
+                                class="flex items-center h-12 px-5 font-sans text-sm font-bold js-header-travelers-link header-traveler-link rounded-3xl text-grey transition-200ms-ease hover:text-normal dark:hover:text-lightWhite">
+                                <svg class="w-6 h-6 mr-3 icon icon-email">
+                                    <use xlink:href="#icon-email"></use>
+                                </svg>
+                                <span>Cars</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="/" class="hidden ml-auto header-button md:flex">
+                        <span class="transition-200ms-ease">Support</span>
+                    </a>
+                    <a href="/" class="hidden ml-10 header-button primary-button md:flex">
+                        <span>List your property</span>
+                    </a>
+                    <div class="relative ml-6 js-header-item header-item">
+                        <button
+                            class="justify-center w-10 h-full js-header-head header-button header-head after:top-0 after:right-0 after:h-3 after:w-3 after:rounded-full after:bg-lightGreen after:absolute">
+                            <svg class="w-6 h-6 icon icon-notification transition-200ms-ease">
+                                <use xlink:href="#icon-notification"></use>
+                            </svg>
+                        </button>
+                        <div
+                            class="header-body js-header-body header-notification-body translate-y-[10px] invisible transition-all-300ms-ease opacity-0 z-50 bg-paper px-4 pb-[10px] pt-10 absolute right-[-130px] top-[calc(100%_+_35px)] w-[354px] rounded-[20px] shadow-[0px_16px_64px_-24px_rgb(31_47_70_/_40%)] max-h-[395px] overflow-y-auto dark:bg-blur-black">
+                            <div class="mb-4 ml-4 text-2xl font-semibold">Notification</div>
+                            <div>
+                                <a href="/"
+                                    class="relative flex p-4 pr-10 rounded-2xl transition-200ms-ease hover:bg-[#F4F5F6] dark:hover:bg-normal">
+                                    <div class="w-12 h-12 mr-6">
+                                        <img src="./assets/images/user-1.jpeg" alt="User"
+                                            class="w-full h-full rounded-full">
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="text-base text-dark font-semibold leading-[1.5] dark:text-paper">
+                                            Kohaku Tora
+                                        </div>
+                                        <div class="text-[#353945] leading-[1.7] text-sm dark:text-lightWhite">just sent
+                                            you a message</div>
+                                        <div class="text-xs text-grey leading-[1.6]">1 minute ago</div>
+                                    </div>
+                                    <div class="absolute w-3 h-3 rounded-full right-4 top-1/2 -translate-y-2/4 bg-blue">
+                                    </div>
+                                </a>
+                                <a href="/"
+                                    class="relative flex p-4 pr-10 rounded-2xl transition-200ms-ease hover:bg-[#F4F5F6] dark:hover:bg-normal">
+                                    <div class="w-12 h-12 mr-6">
+                                        <img src="./assets/images/user-1.jpeg" alt="User"
+                                            class="w-full h-full rounded-full">
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="text-base text-dark font-semibold leading-[1.5] dark:text-paper">
+                                            Kohaku Tora
+                                        </div>
+                                        <div class="text-[#353945] leading-[1.7] text-sm dark:text-lightWhite">just sent
+                                            you a message</div>
+                                        <div class="text-xs text-grey leading-[1.6]">3 hours ago</div>
+                                    </div>
+                                    <div class="absolute w-3 h-3 rounded-full right-4 top-1/2 -translate-y-2/4 bg-blue">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-10 h-10 ml-5 text-center rounded-full md:ml-6 js-header-user bg-lightGreen transition-200ms-ease text-paper hover:bg-darkGreen">
+                        <svg class="w-6 h-6 icon icon-user">
+                            <use xlink:href="#icon-user"></use>
+                        </svg>
+                    </button>
+                    <button class="relative w-8 h-8 ml-5 header-burger js-header-burger md:hidden">
+
+                        <div
+                            class="fixed top-[132px] h-screen invisible w-screen opacity-0 dark:bg-dark bg-paper transition-all-300ms-ease header-burger-body">
+                            <a href="/" data-page="/"
+                                class="block w-full h-16 px-8 text-2xl font-bold js-header-travelers-link">Stays</a>
+                        </div>
+                    </button>
+
+                </div>
+            </div>
+        </header>
+        <!-- Header -->
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Preview -->
+            <div class="mb-[136px] container-2xl">
+                <div class="relative">
+                    <img src="./assets/images/main-pic-1.jpeg" alt="Main" class="w-full h-full rounded-3xl">
+                    <div class="absolute inset-0 px-20 py-[145px] dark:text-normal">
+                        <h1 class="max-w-md mb-4 text-8xl">
+                            Air, sleep, dream
+                        </h1>
+                        <h6 class="mb-6 text-2xl font-thin">Find and book a great experience.</h6>
+                        <a href="/" class="blue-button">
+                            Start your search
+                        </a>
+                    </div>
+                    <div
+                        class="relative rounded-3xl mt-[-175px] z-10 p-10 bg-blur-paper blur-32 mx-20 shadow-[0px_40px_64px_-32px_rgb(15_15_15_/_10%)] dark:bg-blur-black border border-paper dark:border-lightBlack">
+                        <div
+                            class="flex shadow-[inset_0_-1px_0_0_#e6e8ec] mb-6 dark:shadow-[inset_0_-1px_0_0_rgb(119_126_144_/_30%)]">
+                            <a href="/" data-page="/"
+                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                Stays
+                            </a>
+                            <a href="/" data-page="/flights"
+                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                Flights
+                            </a>
+                            <a href="/" data-page="/cars"
+                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                Cars
+                            </a>
+                            <a href="/" data-page="/things-to-do"
+                                class="mr-12 pb-[30px] tracking-wide font-bold font-sans js-preview-link preview-link dark:text-lightGrey dark:hover:text-paper text-grey hover:text-normal transition-200ms-ease text-sm">
+                                Things to do
+                            </a>
+                        </div>
+                        <div class="relative flex h-24">
+                            <div class="flex-[0_0_300px] overflow-hidden location js-location relative js-preview-item">
+                                <div
+                                    class="absolute top-0 left-0 w-full h-full overflow-hidden cursor-pointer rounded-2xl transition-200ms-ease location-head">
+                                    <div class="absolute top-6 left-5 text-lightGrey">
+                                        <svg class="w-6 h-6 icon icon-location">
+                                            <use xlink:href="#icon-location"></use>
+                                        </svg>
+                                    </div>
+                                    <input type="text"
+                                        class="relative z-10 w-full h-full pb-6 pr-4 text-2xl font-bold truncate bg-transparent outline-none cursor-pointer dark:placeholder:text-paper pl-14 rounded-2xl placeholder:text-normal"
+                                        name="location" placeholder="Location">
+                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Where
+                                        are
+                                        you
+                                        going?
+                                    </span>
+                                    <button
+                                        class="absolute z-10 hidden w-8 h-8 clear-btn transition-200ms-ease hover:text-blue top-5 right-5 text-lightGrey">
+                                        <svg class="w-6 h-6 icon icon-close-circle">
+                                            <use xlink:href="#icon-close-circle"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div
+                                    class="invisible opacity-0 z-20 location-body p-2 absolute left-0 bottom-[calc(100%_+_16px)] w-[510px] shadow-[0px_40px_32px_-24px_rgb(15_15_15_/_12%)] bg-paper rounded-3xl transition-200ms-ease dark:bg-dark">
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        London
+                                    </a>
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        New York
+                                    </a>
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        Saigon
+                                    </a>
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        Paris
+                                    </a>
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        Melbourne
+                                    </a>
+                                    <a href="#"
+                                        class="flex relative items-center pr-5 pl-12 rounded-xl text-base text-grey transition-200ms-ease font-semibold h-14 leading-[1.5] before:absolute before:top-1/2 before:-translate-y-1/2 before:left-[6px] before:w-8 dark:before:bg-normal dark:before:border-lightBlack dark:hover:before:bg-lightBlack before:transition-200ms-ease dark:hover:bg-normal dark:hover:text-paper before:h-8 before:border before:border-lightWhite before:rounded-full location-icon hover:text-normal hover:bg-[#F4F5F6]">
+                                        Birmingham
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 overflow-hidden">
+                                <div class="w-1/2 flex-[0_0_50%] relative cursor-pointer h-full">
+                                    <div class="absolute top-5 left-4 text-lightGrey">
+                                        <svg class="w-6 h-6 icon icon-calendar">
+                                            <use xlink:href="#icon-calendar"></use>
+                                        </svg>
+                                    </div>
+                                    <input type="text"
+                                        class="w-full h-full pb-6 pr-4 text-2xl font-bold bg-transparent outline-none cursor-pointer pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
+                                        placeholder="Check in">
+                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Add
+                                        date</span>
+                                </div>
+                                <div class="w-1/2 flex-[0_0_50%] relative cursor-pointer h-full">
+                                    <div class="absolute top-5 left-4 text-lightGrey">
+                                        <svg class="w-6 h-6 icon icon-calendar">
+                                            <use xlink:href="#icon-calendar"></use>
+                                        </svg>
+                                    </div>
+                                    <input type="text"
+                                        class="w-full h-full pb-6 pr-4 text-2xl font-bold bg-transparent outline-none cursor-pointer pl-14 rounded-2xl placeholder:text-normal dark:placeholder:text-paper"
+                                        placeholder="Check out">
+                                    <span class="absolute text-base font-thin left-14 bottom-5 text-grey">Add
+                                        date</span>
+                                </div>
+                            </div>
+                            <div class="flex-[0_0_296px] overflow-hidden js-traveler traveler relative js-preview-item">
+                                <div
+                                    class="relative h-full cursor-pointer traveler-head js-traveler-head transition-200ms-ease rounded-2xl">
+                                    <div class="absolute top-5 left-4 text-lightGrey">
+                                        <svg class="w-6 h-6 icon icon-user">
+                                            <use xlink:href="#icon-user"></use>
+                                        </svg>
+                                    </div>
+                                    <div
+                                        class="w-full h-full cursor-pointer pt-5 pr-[116px] pl-14 text-2xl font-bold rounded-2xl dark:text-paper js-traveler-result">
+                                        Travelers</div>
+                                    <span
+                                        class="absolute text-base font-thin left-14 bottom-5 text-grey">Travelers</span>
+                                </div>
+                                <div
+                                    class="absolute invisible opacity-0 traveler-body z-20 bottom-[calc(100%_+_16px)] right-0 w-[426px] py-4 px-10 bg-paper shadow-[0px_40px_32px_-24px_rgb(15_15_15_/_12%)] transition-200ms-ease rounded-3xl dark:bg-dark">
+                                    <div
+                                        class="flex items-start pt-6 pb-4 border-b js-traveler-counter border-lightWhite dark:border-lightBlack">
+                                        <div class="flex-1 pr-6">
+                                            <div class="text-base font-semibold leading-[1.5]">Children</div>
+                                            <div class="text-xs leading-[1.6] text-grey">Ages 2 - 12</div>
+                                        </div>
+                                        <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                    <use xlink:href="#icon-minus-circle"></use>
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="flex-1 px-3 text-base font-semibold text-center js-counter-result">
+                                                0</div>
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                    <use xlink:href="#icon-plus-circle"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start pt-6 pb-4 border-b js-traveler-counter border-lightWhite dark:border-lightBlack">
+                                        <div class="flex-1 pr-6">
+                                            <div class="text-base font-semibold leading-[1.5]">Teenagers</div>
+                                            <div class="text-xs leading-[1.6] text-grey">Ages 13 - 18</div>
+                                        </div>
+                                        <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                    <use xlink:href="#icon-minus-circle"></use>
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="flex-1 px-3 text-base font-semibold text-center js-counter-result">
+                                                0</div>
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                    <use xlink:href="#icon-plus-circle"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start pt-6 pb-4 js-traveler-counter">
+                                        <div class="flex-1 pr-6">
+                                            <div class="text-base font-semibold leading-[1.5]">Adults</div>
+                                            <div class="text-xs leading-[1.6] text-grey">19 or above</div>
+                                        </div>
+                                        <div class="flex align-center shrink-0 h-6 w-[104px] select-none">
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-minus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-minus-circle">
+                                                    <use xlink:href="#icon-minus-circle"></use>
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="flex-1 px-3 text-base font-semibold text-center js-counter-result">
+                                                0</div>
+                                            <button
+                                                class="w-6 hover:text-blue shrink-0 text-lightGrey js-plus-counter-btn">
+                                                <svg class="w-6 h-6 transition-200ms-ease icon icon-plus-circle">
+                                                    <use xlink:href="#icon-plus-circle"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/"
+                                class="text-paper w-16 h-16 absolute top-1/2 right-5 flex items-center justify-center hover:bg-[#225ffe] rounded-full bg-blue transition-200ms-ease  -translate-y-1/2">
+                                <svg class="w-6 h-6 icon icon-search">
+                                    <use xlink:href="#icon-search"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Preview -->
+
+            <!-- Adventure -->
+            <div class="container-xl mb-[136px]">
+                <div class="mb-16 text-center">
+                    <h2 class="text-5xl leading-[1.16]">Let’s go on an adventure</h2>
+                    <h6 class="mt-2 text-2xl text-grey">Find and book a great experience</h6>
+                </div>
+                <div class="-mx-4 pb-[106px] relative">
+                    <div class="adventure js-adventure-slick">
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-1.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Luxury resort at the sea</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">9,326
+                                    places</a>
+                            </div>
+                        </div>
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-2.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Camping amidst the wild</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">12,226
+                                    places</a>
+                            </div>
+                        </div>
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-3.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Luxury resort at the sea</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">5,256
+                                    places</a>
+                            </div>
+                        </div>
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-1.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Luxury resort at the sea</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">9,326
+                                    places</a>
+                            </div>
+                        </div>
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-2.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Camping amidst the wild</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">12,226
+                                    places</a>
+                            </div>
+                        </div>
+                        <div class="items-center invisible mx-4 opacity-0 transition-all-400ms-ease">
+                            <div class="w-40 shrink-0">
+                                <a href="/">
+                                    <img src="./assets/images/adventure-pic-3.svg" alt="Adventure Pic" class="w-full">
+                                </a>
+                            </div>
+                            <div class="flex-1 pl-4 pr-6">
+                                <div class="mb-2 text-base font-semibold">
+                                    <a href="/">Luxury resort at the sea</a>
+                                </div>
+                                <a href="/"
+                                    class="inline-block px-3 text-xs text-black bg-lightWhite dark:bg-lightBlack dark:text-lightWhite uppercase rounded-[13px] leading-[26px] font-bold">5,256
+                                    places</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Adventure -->
+
+            <!-- Travel -->
+            <div class="container-xl mb-[136px]">
+                <div class="mb-16 text-center">
+                    <h2 class="text-5xl leading-[1.16]">Travel to make memories all <br> around the world</h2>
+                    <h6 class="mt-2 text-2xl text-grey">Find trips that fit a flexible lifestyle</h6>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex-1 pr-32">
+                        <div class="max-w-[352px] mb-10">
+                            <div class="mb-10">
+                                <div
+                                    class="bg-cyan inline-block min-w-[38px] mb-6 px-2 rounded-xl text-center leading-6 text-paper text-sm">
+                                    01
+                                </div>
+                                <div class="mb-4 text-2xl leading-[1.3] font-semibold">Find trips that fit a flexible
+                                    lifestyle</div>
+                                <div class="text-sm leading-[1.7]">Stacks is a production-ready library of stackable
+                                    content blocks built in React Native
+                                </div>
+                            </div>
+                            <div class="mb-10">
+                                <div
+                                    class="bg-purple inline-block min-w-[38px] mb-6 px-2 rounded-xl text-center leading-6 text-paper text-sm">
+                                    02
+                                </div>
+                                <div class="mb-4 text-2xl leading-[1.3] font-semibold">Travel with more confidence
+                                </div>
+                                <div class="text-sm leading-[1.7]">Stacks is a production-ready library of stackable
+                                    content blocks built in React Native
+                                </div>
+                            </div>
+                            <div class="mb-10">
+                                <div
+                                    class="bg-lightGreen inline-block min-w-[38px] mb-6 px-2 rounded-xl text-center leading-6 text-paper text-sm">
+                                    03
+                                </div>
+                                <div class="mb-4 text-2xl leading-[1.3] font-semibold">See what’s really included</div>
+                                <div class="text-sm leading-[1.7]">Stacks is a production-ready library of stackable
+                                    content blocks built in React Native
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" class="blue-button">Start your search</a>
+                    </div>
+                    <div class="shrink-0 w-[454px] relative">
+                        <div class="travel js-travel-slick">
+                            <div class="invisible opacity-0">
+                                <div>
+                                    <img src="./assets/images/travel-pic-1.jpeg" alt="Travel Pic"
+                                        class="w-full rounded-[32px]">
+                                </div>
+                                <div class="absolute inset-0 w-full h-full transition-all-400ms-ease">
+                                    <div
+                                        class="absolute top-[40%] -left-[24%] js-comment w-[70.5%] scale-[0.8] filter-comment transition-all-1000ms-cubic-custom travel-preview opacity-0 delay-300">
+                                        <img src="./assets/images/appraisal-pic-1.png" alt="Comment Pic"
+                                            class="light-image">
+                                        <img src="./assets/images/appraisal-pic-dark-1.png" alt="Comment Pic"
+                                            class="dark-image">
+                                    </div>
+                                    <div
+                                        class="absolute top-[48%] -right-[25%] js-comment w-[70.5%] scale-[0.8] filter-comment transition-all-1000ms-cubic-custom travel-preview opacity-0 delay-[600ms]">
+                                        <img src="./assets/images/appraisal-pic-1.png" alt="Comment Pic"
+                                            class="light-image">
+                                        <img src="./assets/images/appraisal-pic-dark-1.png" alt="Comment Pic"
+                                            class="dark-image">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-[17%] -left-[40%] js-comment w-[70.5%] scale-[0.8] filter-comment transition-all-1000ms-cubic-custom travel-preview opacity-0 delay-[900ms]">
+                                        <img src="./assets/images/appraisal-pic-1.png" alt="Comment Pic"
+                                            class="light-image">
+                                        <img src="./assets/images/appraisal-pic-dark-1.png" alt="Comment Pic"
+                                            class="dark-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="invisible opacity-0">
+                                <div>
+                                    <img src="./assets/images/travel-pic-1.jpeg" alt="Travel Pic"
+                                        class="w-full rounded-[32px]">
+                                </div>
+                                <div class="absolute inset-0 w-full h-full transition-all-400ms-ease">
+                                    <div
+                                        class="absolute top-[40%] -left-[24%] js-comment w-[70.5%] scale-[0.8] filter-comment transition-all-1000ms-cubic-custom travel-preview opacity-0 delay-300">
+
+                                        <img src="./assets/images/appraisal-pic-1.png" alt="Comment Pic"
+                                            class="light-image">
+                                        <img src="./assets/images/appraisal-pic-dark-1.png" alt="Comment Pic"
+                                            class="dark-image">
+                                    </div>
+                                    <div
+                                        class="absolute top-[48%] -right-[25%] js-comment w-[70.5%] scale-[0.8] filter-comment transition-all-1000ms-cubic-custom travel-preview opacity-0 delay-[600ms]">
+                                        <img src="./assets/images/appraisal-pic-1.png" alt="Comment Pic"
+                                            class="light-image">
+                                        <img src="./assets/images/appraisal-pic-dark-1.png" alt="Comment Pic"
+                                            class="dark-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Travel -->
+
+            <!-- Work -->
+            <div class="container-xl mb-[136px]">
+                <div class="mb-16 text-center">
+                    <h2 class="text-5xl leading-[1.16]">How it work</h2>
+                    <h6 class="mt-2 text-2xl text-grey">Keep calm & travel on</h6>
+                </div>
+                <div class="relative max-w-5xl mx-auto">
+                    <div class="relative z-10 flex">
+                        <div class="flex-[0_0_256px] mr-auto text-center">
+                            <div>
+                                <img src="./assets/images/work-pic-1-light.png" alt="Work Pic" class="light-image">
+                                <img src="./assets/images/work-pic-dark-1.png" alt="Work Pic" class="dark-image">
+                            </div>
+                            <div class="mb-2 text-2xl font-bold">Book & relax</div>
+                            <div class="text-sm text-grey leading-[1.7]">We realize ideas from simple to complex,
+                                everything
+                                becomes easy
+                                to use.</div>
+                        </div>
+                        <div class="flex-[0_0_256px] mr-auto text-center">
+                            <div>
+                                <img src="./assets/images/work-pic-2-light.png" alt="Work Pic" class="light-image">
+                                <img src="./assets/images/work-pic-dark-2.png" alt="Work Pic" class="dark-image">
+                            </div>
+                            <div class="mb-2 text-2xl font-bold">Smart checklist</div>
+                            <div class="text-sm text-grey leading-[1.7]">We realize ideas from simple to complex,
+                                everything
+                                becomes easy
+                                to use.</div>
+                        </div>
+                        <div class="flex-[0_0_256px] text-center">
+                            <div>
+                                <img src="./assets/images/work-pic-3-light.png" alt="Work Pic" class="light-image">
+                                <img src="./assets/images/work-pic-dark-3.png" alt="Work Pic" class="dark-image">
+                            </div>
+                            <div class="mb-2 text-2xl font-bold">Save more</div>
+                            <div class="text-sm text-grey leading-[1.7]">We realize ideas from simple to complex,
+                                everything
+                                becomes easy
+                                to use.</div>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 top-[66px] -translate-x-1/2">
+                        <svg width="839" height="137" viewBox="0 0 839 137" class="fill-[none]"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M838 4.83887C823.237 25.0088 713.617 137.14 601.48 135.889C497.352 134.728 454.07 -36.7167 262.536 60.1723C94.2489 145.302 53.9174 52.5844 1.07634 1.99272"
+                                stroke="#E6E8EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-dasharray="4 12" class="dark:stroke-lightBlack"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Work -->
+
+            <!-- Live -->
+            <div class="container-xl mb-[136px]">
+                <div class="mb-16 text-center">
+                    <h2 class="text-5xl leading-[1.16]">Live anywhere</h2>
+                    <h6 class="mt-2 text-2xl text-grey">Keep calm & travel on</h6>
+                </div>
+                <div class="flex flex-wrap -mx-4 -mt-12 js-destinations-wrapper">
+                    <a href="/"
+                        class="group mx-4 mt-12 text-center flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] hover:text-blue transition-colors duration-200 ease-[ease]">
+                        <div class="mb-6 overflow-hidden rounded-2xl">
+                            <img src="./assets/images/live-pic-1.png" alt="Live Pic"
+                                class="transition-transform ease-[ease] duration-1000 group-hover:scale-105">
+                        </div>
+                        <div class="mb-2 text-base font-semibold">Enjoy the great cold</div>
+                        <div class="text-sm text-grey">6,879 properties</div>
+                    </a>
+                    <a href="/"
+                        class="group mx-4 mt-12 text-center flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] hover:text-blue transition-colors duration-200 ease-[ease]">
+                        <div class="mb-6 overflow-hidden rounded-2xl">
+                            <img src="./assets/images/live-pic-2.png" alt="Live Pic"
+                                class="transition-transform ease-[ease] duration-1000 group-hover:scale-105">
+                        </div>
+                        <div class="mb-2 text-base font-semibold">Pick up the earliest sunrise</div>
+                        <div class="text-sm text-grey">9,849 properties</div>
+                    </a>
+                    <a href="/"
+                        class="group mx-4 mt-12 text-center flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] hover:text-blue transition-colors duration-200 ease-[ease]">
+                        <div class="mb-6 overflow-hidden rounded-2xl">
+                            <img src="./assets/images/live-pic-3.png" alt="Live Pic"
+                                class="transition-transform ease-[ease] duration-1000 group-hover:scale-105">
+                        </div>
+                        <div class="mb-2 text-base font-semibold">Unique stay</div>
+                        <div class="text-sm text-grey">12,879 properties</div>
+                    </a>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <button
+                        class="text-sm js-destinations-button font-sans font-semibold tracking-wide text-normal shadow-[0_0_0_2px_#e6e8ec_inset] dark:shadow-[0_0_0_2px_#777e90_inset] dark:hover:bg-lightBlack dark:hover:shadow-[0_0_0_2px_#353945_inset] dark:text-paper px-4 h-10 rounded-[20px] hover:bg-normal hover:shadow-[0_0_0_2px_#23262f_inset] hover:text-white transition-200ms-ease group">
+                        Load more
+                    </button>
+                </div>
+            </div>
+            <!-- Live -->
+
+            <!-- Browse -->
+            <div class="container-xl mb-[136px]">
+                <div class="relative">
+                    <div class="mb-[70px] pr-[120px]">
+                        <h2 class="text-5xl leading-[1.16]">Explore nearby</h2>
+                        <h6 class="mt-2 text-2xl text-grey">Let’s go on an adventure</h6>
+                    </div>
+                    <div class="-mx-4">
+                        <div class="browse js-browse-slick pb-[106px]">
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-1.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        20% off</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    650,111
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-2.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        from $230</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    664,423
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-3.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        30% off</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    324,565
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-4.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        from $190</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    443,879
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-1.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        20% off</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    650,111
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-2.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        from $230</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    664,423
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-3.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        30% off</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    324,565
+                                </div>
+                            </a>
+                            <a href="/"
+                                class="invisible block mx-4 opacity-0 transition-all-400ms-ease group hover:text-blue">
+                                <div class="relative mb-5 overflow-hidden rounded-3xl">
+                                    <img src="./assets/images/browse-pic-4.jpeg" alt="Browse Pic"
+                                        class="w-full group-hover:scale-110 transition-transform ease-[ease] duration-1000">
+                                    <div
+                                        class="absolute top-4 left-4 z-10 bg-normal text-paper px-3 text-xs font-bold leading-[26px] rounded-xl uppercase">
+                                        from $190</div>
+                                </div>
+                                <div class="text-base leading-[1.5] font-semibold mb-2">Nature house</div>
+                                <div class="text-grey text-xs font-semibold flex leading-[1.6] items-center">
+                                    <svg class="icon icon-home w-4 h-4 -mt-[2px] mr-[6px]">
+                                        <use xlink:href="#icon-home"></use>
+                                    </svg>
+                                    443,879
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Browse -->
+
+            <!-- Planning -->
+            <div class="relative pt-[50px] pb-[150px] min-h-[750px] flex items-center">
+                <div class="container-xl">
+                    <div class="max-w-[440px]">
+                        <div class="mb-4 text-xs font-bold tracking-wide uppercase">
+                            SUPERCHARGE YOUR PLANNING POWERS
+                        </div>
+                        <h2 class="mb-8 text-5xl leading-[1.16]">
+                            Travel to make memories all around the world
+                        </h2>
+                        <div class="mb-10 text-base text-grey">Stacks is a production-ready library of stackable
+                            content
+                            blocks built in React Native.
+                        </div>
+                        <form class="relative max-w-[300px]">
+                            <input type="tel" required name="phone" placeholder="Enter your phone number"
+                                class="text-input">
+                            <button type="submit" class="submit-button">
+                                <svg class="icon icon-arrow-next">
+                                    <use xlink:href="#icon-arrow-next"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="absolute top-0 w-[643px] right-[calc(50%_-_600px)] -z-10">
+                        <div>
+                            <img src="./assets/images/planning-pic-1.png" alt="Planning Pic" class="light-image">
+                            <img src="./assets/images/planning-pic-dark-1.png" alt="Planning Pic" class="dark-image">
+                        </div>
+                        <div class="absolute left-[1.5%] bottom-[16.5%] w-[39.7%] filter-comment">
+                            <img src="./assets/images/planning-pic-2.png" alt="Planning Pic" class="light-image">
+                            <img src="./assets/images/planning-pic-dark-2.png" alt="Planning Pic" class="dark-image">
+                        </div>
+                        <div class="absolute right-[10%] bottom-[27.5%] w-[30.8%] filter-comment-2">
+                            <img src="./assets/images/planning-pic-3.png" alt="Planning Pic" class="light-image">
+                            <img src="./assets/images/planning-pic-dark-3.png" alt="Planning Pic" class="dark-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Planning -->
+
+            <!-- View -->
+            <div class="container-xl mb-[136px]">
+                <div class="flex items-end mb-20">
+                    <div class="max-w-[540px] mr-auto">
+                        <div class="mb-1 text-sm">fleet travel ui kit</div>
+                        <h2 class="text-5xl leading-[1.16]">Book a ticket <br> and just leave</h2>
+                    </div>
+                    <a href="" class="blue-button">Book now</a>
+                </div>
+                <div data-video_link="https://www.youtube.com/embed/3SsK-cxlj_w"
+                    class="relative -mx-20 overflow-hidden cursor-pointer rounded-2xl group pb-[56.25%] js-video-wrapper">
+                    <img src="./assets/images/video-bg.jpeg" alt="Video Bg" class="absolute w-full h-full">
+                    <button
+                        class="js-video-play-btn absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full shadow-[0px_8px_16px_-8px_rgb(15_15_15_/_10%)] bg-paper text-grey group-hover:text-blue">
+                        <svg class="w-6 h-6 icon icon-play group-hover:scale-[1.2] transition-200ms-ease">
+                            <use xlink:href="#icon-play"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- View -->
+        </div>
+        <!-- Content -->
+
+        <!-- Footer -->
+        <footer class="border-t border-lightWhite dark:border-normal transition-200ms-ease">
+            <div class="container-xl">
+                <div class="flex pt-20 pb-12 font-sans text-sm font-bold tracking-wide">
+                    <div class="w-64">
+                        <div class="mb-4 -mt-2">
+                            <a href="/">
+                                <img src="./assets/images/logo-dark.svg" alt="logo" class="light-image">
+                                <img src="./assets/images/logo-light.svg" alt="logo" class="dark-image">
+                            </a>
+                        </div>
+                        <div class="flex items-center text-grey">
+                            <svg class="w-4 h-4 mr-2 icon icon-bulb">
+                                <use xlink:href="#icon-bulb"></use>
+                            </svg>
+                            <span>Dark theme</span>
+                            <label for="theme-input" class="ml-2 cursor-pointer">
+                                <input type="checkbox" id="theme-input" name="theme" hidden>
+                                <span class="relative inline-block transition-200ms-ease">
+                                    <span
+                                        class="relative block w-12 h-6 dark:before:bg-paper before:transition-200ms-ease dark:before:translate-x-6 dark:before:-translate-y-1/2 dark:bg-blue bg-lightWhite rounded-xl transition-200ms-ease before:w-4 before:h-4 before:left-1 before:top-1/2 before:-translate-y-1/2 before:absolute before:bg-blue before:rounded-full"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex-1 px-4">
+                        <div class="flex flex-wrap -mt-6">
+                            <a href="/"
+                                class="flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] mt-6 mx-4 primary-link">
+                                Stays
+                            </a>
+                            <a href="/"
+                                class="flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] mt-6 mx-4 primary-link">
+                                Flights
+                            </a>
+                            <a href="/"
+                                class="flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] mt-6 mx-4 primary-link">
+                                Support
+                            </a>
+                            <a href="/"
+                                class="flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] mt-6 mx-4 primary-link">
+                                Cars
+                            </a>
+                            <a href="/"
+                                class="flex-[0_0_calc(33.333%_-_32px)] w-[calc(33.333%_-_32px)] mt-6 mx-4 primary-link">
+                                Things to do
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-64">
+                        <div class="mb-4 text-xs font-semibold uppercase">JOIN OUR COMMUNITY 🔥</div>
+                        <form class="relative">
+                            <input type="email" required name="email" placeholder="Enter your email" class="text-input">
+                            <button type="submit" class="submit-button">
+                                <svg class="icon icon-arrow-next">
+                                    <use xlink:href="#icon-arrow-next"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="py-6 border-t border-[#f4f5f6] dark:border-normal dark:text-grey transition-200ms-ease">
+                    <div class="text-xs">Copyright © 2022 UI8 LLC. All rights reserved</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+    </div>
+
+    <!-- SVG -->
+    <div class="hidden">
+        <svg width="0" height="0">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-eye">
+                <path
+                    d="M8 2.667c3.351 0 5.649 2.106 6.895 3.671.784.985.784 2.34 0 3.325-1.246 1.565-3.544 3.671-6.895 3.671S2.35 11.228 1.105 9.663c-.784-.985-.784-2.34 0-3.325C2.35 4.773 4.649 2.667 8 2.667zM8 4c-2.75 0-4.706 1.728-5.852 3.168a1.31 1.31 0 0 0 0 1.665C3.294 10.272 5.249 12 8 12s4.706-1.728 5.851-3.168a1.31 1.31 0 0 0 0-1.665C12.706 5.729 10.75 4 8 4zm0 1.333c1.473 0 2.667 1.194 2.667 2.667S9.473 10.667 8 10.667 5.333 9.473 5.333 8 6.527 5.334 8 5.334zm0 1.333l-.056.001A1 1 0 0 1 7 8a1 1 0 0 1-.332-.057L6.667 8c0 .736.597 1.333 1.333 1.333S9.333 8.737 9.333 8 8.736 6.667 8 6.667z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-apple">
+                <path
+                    d="M7.56 4.975c-.331-.148-.687-.308-1.282-.308C4.056 4.668 3.5 6.89 3.5 9.112s1.667 5 2.778 5c.651 0 1.111-.191 1.492-.349.27-.112.5-.207.73-.207s.46.095.73.207c.381.158.841.349 1.492.349.793 0 1.869-1.415 2.42-3.034.056-.163-.058-.331-.224-.376-.945-.255-1.641-1.119-1.641-2.145 0-.968.619-1.792 1.484-2.097.164-.058.265-.238.188-.393-.416-.839-1.112-1.399-2.227-1.399-.595 0-.952.16-1.282.308-.286.128-.553.248-.94.248s-.654-.12-.94-.248zm.94-1.002c0-1.151.933-2.083 2.083-2.083.077 0 .139.062.139.139 0 1.151-.933 2.083-2.083 2.083-.077 0-.139-.062-.139-.139z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-google">
+                <path
+                    d="M14.899 6.789H8.536v2.728h3.607c-.577 1.818-2.001 2.424-3.636 2.424a3.94 3.94 0 0 1-3.23-1.677A3.94 3.94 0 0 1 4.8 6.655a3.94 3.94 0 0 1 2.683-2.459 3.94 3.94 0 0 1 3.553.789l1.982-1.887c-.798-.735-1.764-1.264-2.812-1.542s-2.15-.295-3.207-.05-2.039.743-2.859 1.453-1.455 1.609-1.85 2.62-.536 2.103-.412 3.181.508 2.109 1.121 3.005 1.435 1.628 2.395 2.134 2.029.77 3.114.769c3.676 0 7-2.424 6.392-7.879z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-plus-circle">
+                <path
+                    d="M8 1.333A6.67 6.67 0 0 1 14.666 8 6.67 6.67 0 0 1 8 14.666 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333zm0 1.333C5.054 2.666 2.666 5.054 2.666 8S5.054 13.333 8 13.333 13.333 10.945 13.333 8 10.945 2.666 8 2.666zM8 4c.368 0 .667.298.667.667v2.667h2.667c.368 0 .667.298.667.667s-.298.667-.667.667H8.666v2.667c0 .368-.298.667-.667.667s-.667-.298-.667-.667V8.666H4.666C4.298 8.666 4 8.368 4 8s.298-.667.667-.667h2.667V4.666C7.333 4.298 7.631 4 8 4z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-minus-circle">
+                <path
+                    d="M8 1.333A6.67 6.67 0 0 1 14.666 8 6.67 6.67 0 0 1 8 14.666 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333zm0 1.333C5.054 2.666 2.666 5.054 2.666 8S5.054 13.333 8 13.333 13.333 10.945 13.333 8 10.945 2.666 8 2.666zm3.333 4.667c.368 0 .667.298.667.667s-.298.667-.667.667h0-6.667C4.298 8.666 4 8.368 4 8s.298-.667.667-.667h0z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-close-circle">
+                <path
+                    d="M8 1.334a6.67 6.67 0 0 1 6.667 6.667A6.67 6.67 0 0 1 8 14.667a6.67 6.67 0 0 1-6.667-6.667A6.67 6.67 0 0 1 8 1.334zm0 1.333c-2.946 0-5.333 2.388-5.333 5.333S5.054 13.334 8 13.334s5.333-2.388 5.333-5.333S10.945 2.667 8 2.667zm2.471 2.862c.26.26.26.682 0 .943L8.943 8.001l1.529 1.529c.26.26.26.682 0 .943s-.682.26-.943 0L8 8.943l-1.529 1.529c-.26.26-.682.26-.943 0s-.26-.682 0-.943l1.529-1.529-1.529-1.529c-.26-.26-.26-.682 0-.943s.682-.26.943 0L8 7.058l1.529-1.529c.26-.26.682-.26.943 0z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
+                <path
+                    d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-bulb">
+                <path
+                    d="M7.999 0c2.946 0 5.333 2.388 5.333 5.333 0 1.684-.781 3.186-2 4.164v1.17c0 .591-.256 1.122-.663 1.488L10.668 14a2 2 0 0 1-2 2H7.335a2 2 0 0 1-2-2v-1.841c-.41-.366-.668-.899-.668-1.492v-1.17c-1.219-.977-2-2.479-2-4.164C2.666 2.388 5.054 0 7.999 0zm1.335 12.667l-2.667-.001V14c0 .368.298.667.667.667h1.333c.368 0 .667-.298.667-.667v-1.333h0zM7.999 1.333a4 4 0 0 0-4 4A3.99 3.99 0 0 0 5.5 8.457l.499.4v1.81c0 .368.298.667.667.667h.668V7.609L6.196 6.471c-.26-.26-.26-.682 0-.943s.682-.26.943 0h0L8 6.39l.862-.862c.26-.26.682-.26.943 0s.26.682 0 .943h0L8.667 7.609v3.724h.666c.368 0 .667-.298.667-.667v-1.81l.499-.4a3.99 3.99 0 0 0 1.501-3.123 4 4 0 0 0-4-4z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-user">
+                <path
+                    d="M8 .668a4 4 0 0 1 4 4c0 1.296-.617 2.449-1.573 3.18 2.104.93 3.573 3.037 3.573 5.487v1.333c0 .368-.298.667-.667.667s-.667-.298-.667-.667v-1.333a4.67 4.67 0 0 0-4.645-4.667H8h0l-.021-.001-.193.006a4.67 4.67 0 0 0-4.453 4.662v1.333c0 .368-.298.667-.667.667S2 15.036 2 14.668v-1.333c0-2.45 1.468-4.557 3.573-5.489C4.617 7.117 4 5.964 4 4.668a4 4 0 0 1 4-4zm0 1.333c-1.473 0-2.667 1.194-2.667 2.667S6.527 7.335 8 7.335s2.667-1.194 2.667-2.667S9.473 2.001 8 2.001z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-calendar">
+                <path
+                    d="M11.333 1.333c.335 0 .612.247.659.568L12 2l-.001.666h.667a2 2 0 0 1 1.995 1.851l.005.149v8a2 2 0 0 1-1.851 1.995l-.149.005H3.333a2 2 0 0 1-1.995-1.851l-.005-.149v-8a2 2 0 0 1 1.851-1.995l.149-.005h.666L4 2c0-.368.298-.667.667-.667.335 0 .612.247.659.568L5.333 2l-.001.666h5.334V2c0-.368.298-.667.667-.667zM12.666 4l-.667-.001.001.667c0 .368-.298.667-.667.667-.335 0-.612-.247-.659-.568l-.007-.099v-.667H5.332l.001.667c0 .368-.298.667-.667.667-.335 0-.612-.247-.659-.568L4 4.666l-.001-.667L3.333 4c-.368 0-.667.298-.667.667v8c0 .368.298.667.667.667h9.333c.368 0 .667-.298.667-.667v-8c0-.368-.298-.667-.667-.667zm-4 6.667c.368 0 .667.298.667.667 0 .335-.247.612-.568.659L8.666 12h-4C4.298 12 4 11.701 4 11.333c0-.335.247-.612.568-.659l.099-.007h4zM11.333 8c.368 0 .667.298.667.667 0 .335-.247.612-.568.659l-.099.007H6.666c-.368 0-.667-.298-.667-.667 0-.335.247-.612.568-.659L6.666 8h4.667z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-arrow-next">
+                <path
+                    d="M10.39 3.765c.464-.375 1.187-.349 1.615.057l3.692 3.5a.91.91 0 0 1 0 1.357l-3.692 3.5c-.428.406-1.151.431-1.615.057s-.493-1.007-.065-1.413L12.247 9H1.143C.512 9 0 8.552 0 8s.512-1 1.143-1h11.104l-1.922-1.822c-.428-.406-.399-1.038.065-1.413z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-notification">
+                <path
+                    d="M8.833 12.861c.368 0 .679.313.516.643-.072.146-.169.281-.289.398-.281.276-.663.431-1.061.431s-.779-.155-1.061-.431a1.47 1.47 0 0 1-.289-.398c-.163-.33.148-.643.516-.643h1.667zM8 1.667c2.982 0 5.4 2.382 5.4 5.321v4.106h.011a.59.59 0 0 1 .589.589.59.59 0 0 1-.589.589H2.589A.59.59 0 0 1 2 11.683a.59.59 0 0 1 .589-.589H2.6V6.988c0-2.939 2.418-5.321 5.4-5.321zm0 1.178c-2.32 0-4.2 1.855-4.2 4.142v4.106h8.4V6.988c0-2.288-1.88-4.142-4.2-4.142z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-comment">
+                <path
+                    d="M8 1.413c1.643 0 3.124.162 4.203.326 1.127.171 2.019.997 2.213 2.12a17.13 17.13 0 0 1 .25 2.887 17.13 17.13 0 0 1-.25 2.887c-.193 1.123-1.086 1.949-2.213 2.12a28.6 28.6 0 0 1-3.787.323l-4.077 2.409a.67.67 0 0 1-1.006-.574v-2.269c-.902-.3-1.584-1.045-1.75-2.009-.135-.783-.25-1.777-.25-2.887s.115-2.104.25-2.887c.193-1.123 1.086-1.949 2.213-2.12 1.08-.164 2.561-.326 4.203-.326zm0 1.333a27.01 27.01 0 0 0-4.003.311c-.596.091-1.01.506-1.099 1.028a15.8 15.8 0 0 0-.231 2.661 15.8 15.8 0 0 0 .231 2.661c.078.453.395.817.856.97l.913.303v2.063l3.375-1.994.353-.006a27.26 27.26 0 0 0 3.609-.308c.596-.091 1.01-.506 1.099-1.028.125-.724.231-1.641.231-2.661s-.106-1.937-.231-2.661c-.09-.522-.504-.938-1.099-1.028A27.01 27.01 0 0 0 8 2.746zm-.667 4.667c.368 0 .667.298.667.667s-.298.667-.667.667h0-2.667C4.298 8.746 4 8.448 4 8.08s.298-.667.667-.667h0zm4-2.667c.368 0 .667.298.667.667s-.298.667-.667.667h0-6.667C4.298 6.08 4 5.781 4 5.413s.298-.667.667-.667h0z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-email">
+                <path
+                    d="M13.334 2a2 2 0 0 1 1.995 1.851l.005.149v8a2 2 0 0 1-1.851 1.995l-.149.005H2.667a2 2 0 0 1-1.995-1.851L.667 12V4a2 2 0 0 1 1.851-1.995L2.667 2h10.667zm0 1.333H2.667C2.299 3.333 2 3.632 2 4v8c0 .368.298.667.667.667h10.667c.368 0 .667-.298.667-.667V4c0-.368-.298-.667-.667-.667zm-.821 1.573c.236.283.198.703-.085.939L9.281 8.468a2 2 0 0 1-2.561 0L3.574 5.845c-.283-.236-.321-.656-.085-.939s.656-.321.939-.085l3.146 2.622c.247.206.606.206.854 0l3.146-2.622c.283-.236.703-.197.939.085z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-home">
+                <path
+                    d="M8.287 1.411c.09.02.177.053.278.102l.086.044.318.184.132.079 2.561 1.543 3.348 2.009c.316.189.418.599.229.915-.17.284-.519.396-.817.277l-.097-.048-.99-.594v6.751c-.001.619-.013.951-.145 1.211-.128.251-.332.455-.583.583-.233.119-.526.141-1.033.144H10v.001H6v-.001H4.428c-.508-.004-.8-.026-1.033-.144-.251-.128-.455-.332-.583-.583-.119-.233-.141-.526-.144-1.033l-.001-6.928-.99.594c-.316.189-.725.087-.915-.229-.17-.284-.105-.644.14-.852l.088-.063 3.344-2.006L6.899 1.82l.451-.263.084-.043c.101-.049.189-.082.279-.102.189-.042.385-.042.574 0zM8 2.721l-.006.003-2.973 1.784L4 5.123l.001 7.651.008.399.005.071.002.018.018.002a6.48 6.48 0 0 0 .469.013H6V10.61a2 2 0 0 1 3.995-.149l.005.149v2.666h1.498l.399-.008.071-.005.018-.002.002-.018c.011-.133.013-.311.014-.608V5.123l-1.025-.618-2.969-1.781L8 2.721zm0 7.223c-.368 0-.667.298-.667.667l-.001 2.666h1.333l.001-2.666c0-.368-.298-.667-.667-.667z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-location">
+                <path
+                    d="M14.349 3.832L10.4 13.31c-.772 1.854-3.489 1.54-3.819-.44l-.493-2.956-2.956-.493c-1.981-.33-2.294-3.047-.44-3.819l9.478-3.949a1.67 1.67 0 0 1 2.18 2.179zm-1.667-.949L3.204 6.833a.67.67 0 0 0 .147 1.273l2.956.493c.562.094 1.002.534 1.096 1.096l.493 2.956a.67.67 0 0 0 1.273.147l3.949-9.478c.114-.275-.161-.55-.436-.436z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-arrow-down">
+                <path
+                    d="M10.805 6.362c-.26-.26-.682-.26-.943 0L8 8.224 6.138 6.362c-.26-.26-.682-.26-.943 0s-.26.682 0 .943l2.333 2.333c.26.26.682.26.943 0l2.333-2.333c.26-.26.26-.682 0-.943z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-play">
+                <path
+                    d="M1.509 2.463c0-1.71 1.876-2.755 3.33-1.855l8.945 5.538c1.378.853 1.378 2.857 0 3.711l-8.945 5.538c-1.454.899-3.33-.147-3.33-1.856V2.463z">
+                </path>
+            </symbol>
+        </svg>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/preview.js"></script>
+    <script type="text/javascript" src="./js/destination.js"></script>
+    <script type="text/javascript" src="./js/video.js"></script>
+    <script type="text/javascript" src="./js/user.js"></script>
+
+    <!-- Slick -->
+    <script>
+        const slickElements = [
+            {
+                class: 'js-adventure-slick',
+                options: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    prevArrow: `<button class="slick-prev dark-arrow-btn group"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M4.909.265a1 1 0 0 0-1.413.057l-3.231 3.5a1 1 0 0 0 0 1.357l3.231 3.5a1 1 0 0 0 1.47-1.357L3.284 5.5H13a1 1 0 1 0 0-2H3.284l1.682-1.822A1 1 0 0 0 4.909.265z" class="dark-arrow-icon"></path></svg></button>`,
+                    nextArrow: `<button class="slick-next dark-arrow-btn group"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M9.091.265a1 1 0 0 1 1.413.057l3.231 3.5a1 1 0 0 1 0 1.357l-3.231 3.5a1 1 0 0 1-1.47-1.357L10.716 5.5H1a1 1 0 1 1 0-2h9.716L9.034 1.678A1 1 0 0 1 9.091.265z" class="dark-arrow-icon"></path></svg></button>`,
+                    dots: false,
+                    infinite: true,
+                    speed: 500,
+                    responsive: [{
+                        breakpoint: 1023,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }]
+                }
+            },
+            {
+                class: 'js-browse-slick',
+                options: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    prevArrow: `<button class="slick-prev dark-arrow-btn group"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M4.909.265a1 1 0 0 0-1.413.057l-3.231 3.5a1 1 0 0 0 0 1.357l3.231 3.5a1 1 0 0 0 1.47-1.357L3.284 5.5H13a1 1 0 1 0 0-2H3.284l1.682-1.822A1 1 0 0 0 4.909.265z" class="dark-arrow-icon"></path></svg></button>`,
+                    nextArrow: `<button class="slick-next dark-arrow-btn group"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M9.091.265a1 1 0 0 1 1.413.057l3.231 3.5a1 1 0 0 1 0 1.357l-3.231 3.5a1 1 0 0 1-1.47-1.357L10.716 5.5H1a1 1 0 1 1 0-2h9.716L9.034 1.678A1 1 0 0 1 9.091.265z" class="dark-arrow-icon"></path></svg></button>`,
+                    dots: false,
+                    infinite: true,
+                    speed: 500,
+                    responsive: [{
+                        breakpoint: 1023,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    }, {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }]
+                }
+            },
+            {
+                class: 'js-travel-slick',
+                options: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    prevArrow: `<button class="light-arrow-btn slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path fill-rule="evenodd" d="M4.909.265a1 1 0 0 0-1.413.057l-3.231 3.5a1 1 0 0 0 0 1.357l3.231 3.5a1 1 0 0 0 1.47-1.357L3.284 5.5H13a1 1 0 1 0 0-2H3.284l1.682-1.822A1 1 0 0 0 4.909.265z" class="fill-paper"></path></svg></button>`,
+                    nextArrow: `<button class="light-arrow-btn slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M9.091.265a1 1 0 0 1 1.413.057l3.231 3.5a1 1 0 0 1 0 1.357l-3.231 3.5a1 1 0 0 1-1.47-1.357L10.716 5.5H1a1 1 0 1 1 0-2h9.716L9.034 1.678A1 1 0 0 1 9.091.265z" class="fill-paper"></path></svg></button>`,
+                    dots: false,
+                    infinite: true,
+                    speed: 500,
+                    fade: true
+                }
+            }
+        ]
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/slick.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    TODO:
+        - User authentication popup
+
+    FIXME:
+        - Fix visibility of preview body
+        - Fix fade animation of slick travel section
+-->

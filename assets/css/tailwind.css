@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-poppins text-normal bg-paper dark:bg-[#141416] dark:text-paper transition-200ms-ease;
+    }
+
+    hero,
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-sans font-bold;
+    }
+
+    h5,
+    h6 {
+        @apply font-sans;
+    }
+
+    svg {
+        @apply inline fill-current;
+    }
+
+    input {
+        @apply outline-none;
+    }
+}
+
+@layer components {
+    .container-xl {
+        @apply w-full max-w-screen-xl px-8 m-auto lg:px-20 md:px-10;
+    }
+
+    .container-2xl {
+        @apply w-full px-10 m-auto max-w-screen-2xl 2xl:px-20;
+    }
+
+    .header-button {
+        @apply relative flex items-center font-sans font-bold tracking-wide text-grey hover:text-normal dark:hover:text-lightWhite;
+    }
+
+    .transition-200ms-ease {
+        @apply transition duration-200 ease-[ease];
+    }
+
+    .transition-all-300ms-ease {
+        @apply transition-all duration-300 ease-[ease];
+    }
+
+    .transition-all-1000ms-cubic-custom {
+        @apply transition-all duration-1000 ease-[cubic-bezier(0.7,_0,_0.3,_1)];
+    }
+
+    .transition-all-400ms-ease {
+        @apply transition-all duration-[400ms] ease-[ease];
+    }
+
+    .blue-button {
+        @apply inline-block h-12 px-6 tracking-wider leading-[48px] text-base text-white rounded-3xl font-sans font-semibold bg-lightBlue hover:bg-darkBlue1 transition-200ms-ease;
+    }
+
+    .text-input {
+        @apply w-full h-12 pr-12 pl-[14px] tracking-wide rounded-3xl border-2 border-lightWhite text-sm transition-200ms-ease outline-none focus:border-grey dark:text-paper dark:border-lightBlack bg-transparent dark:focus:border-grey;
+    }
+
+    .submit-button {
+        @apply absolute w-8 h-8 -translate-y-1/2 rounded-full text-paper right-2 top-1/2 bg-blue transition-200ms-ease hover:bg-darkBlue2;
+    }
+
+    .submit-button svg {
+        @apply w-[14px] h-[14px];
+    }
+
+    .dark-image {
+        @apply hidden dark:inline-block;
+    }
+
+    .light-image {
+        @apply dark:hidden;
+    }
+
+    .primary-button {
+        @apply font-sans font-semibold tracking-wide text-normal shadow-[0_0_0_2px_#e6e8ec_inset] dark:shadow-[0_0_0_2px_#777e90_inset] dark:hover:bg-lightBlack dark:hover:shadow-[0_0_0_2px_#353945_inset] dark:text-paper px-4 h-10 rounded-[20px] hover:bg-normal hover:shadow-[0_0_0_2px_#23262f_inset] hover:text-white transition-200ms-ease;
+    }
+
+    .dark-arrow-btn {
+        @apply w-10 h-10 rounded-full text-[0px] hover:shadow-[inset_0_0_0_2px_#e6e8ec] dark:hover:shadow-[inset_0_0_0_2px_#353945];
+    }
+
+    .dark-arrow-icon {
+        @apply fill-grey dark:group-hover:fill-lightWhite transition-colors duration-200 ease-[ease];
+    }
+
+    .light-arrow-btn {
+        @apply w-10 h-10 rounded-full hover:shadow-[inset_0_0_0_2px_#e6e8ec] text-[0px];
+    }
+
+    .primary-link {
+        @apply text-grey transition duration-200 ease-[ease] hover:text-normal dark:hover:text-lightWhite;
+    }
+
+    .slick-slide img.dark-image {
+        @apply hidden dark:inline-block;
+    }
+
+    .outline-container {
+        @apply w-full h-full px-4 py-5 nm:p-5;
+    }
+}
