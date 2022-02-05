@@ -651,6 +651,12 @@
 }
 
 /* Responsive */
+@media only screen and (max-width: 580px) {
+    .adventure .slick-slide {
+        justify-content: center;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .browse .slick-arrow {
         top: auto;
@@ -666,8 +672,11 @@
     }
 }
 
-@media only screen and (max-width: 580px) {
-    .adventure .slick-slide {
-        justify-content: center;
+@media only screen and (max-width: 1023px) {
+    .traveler.active .traveler-head,
+    .location.active .location-head {
+        width: 100%;
+        box-shadow: none;
+        background: none;
     }
 }
