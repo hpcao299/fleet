@@ -36,7 +36,7 @@
     }
 
     .container-2xl {
-        @apply w-full px-10 m-auto max-w-screen-2xl 2xl:px-20;
+        @apply w-full px-10 m-auto max-w-screen-2xl xl:px-20;
     }
 
     .header-button {
@@ -60,7 +60,7 @@
     }
 
     .blue-button {
-        @apply inline-block h-12 px-6 tracking-wider leading-[48px] text-base text-white rounded-3xl font-sans font-semibold bg-lightBlue hover:bg-darkBlue1 transition-200ms-ease;
+        @apply inline-block text-center h-12 px-6 tracking-wider leading-[48px] text-base text-white rounded-3xl font-sans font-semibold bg-lightBlue hover:bg-darkBlue1 transition-200ms-ease;
     }
 
     .text-input {

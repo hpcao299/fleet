@@ -88,6 +88,10 @@
     position: static;
 }
 
+.live {
+    position: static;
+}
+
 .adventure.slick-initialized,
 .travel.slick-initialized,
 .browse.slick-initialized {
@@ -103,6 +107,7 @@
 .adventure .slick-list {
     overflow: visible;
 }
+.live .slick-arrow,
 .adventure .slick-arrow {
     bottom: 0;
 }
@@ -112,6 +117,7 @@
 .travel .slick-arrow {
     top: 24px;
 }
+.live .slick-prev,
 .adventure .slick-prev {
     left: calc(50% - 44px);
 }
@@ -121,6 +127,7 @@
 .travel .slick-prev {
     right: 72px;
 }
+.live .slick-next,
 .adventure .slick-next {
     right: calc(50% - 44px);
 }
@@ -140,9 +147,6 @@
 }
 .travel .slick-slide.slick-current .travel-preview {
     opacity: 1;
-}
-.browse.slick-slider {
-    position: inherit;
 }
 
 .filter-comment {
@@ -643,5 +647,27 @@
             2.5em 0em 0 0em rgb(255 255 255 / 20%), 1.75em 1.75em 0 0em rgb(255 255 255 / 20%),
             0em 2.5em 0 0em rgb(255 255 255 / 20%), -1.8em 1.8em 0 0em rgb(255 255 255 / 50%),
             -2.6em 0em 0 0em rgb(255 255 255 / 70%), -1.8em -1.8em 0 0em #ffffff;
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+    .browse .slick-arrow {
+        top: auto;
+        bottom: 0;
+    }
+    .browse .slick-prev {
+        right: auto;
+        left: 0;
+    }
+    .browse .slick-next {
+        right: auto;
+        left: 48px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .adventure .slick-slide {
+        justify-content: center;
     }
 }
