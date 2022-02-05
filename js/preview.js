@@ -9,18 +9,17 @@ const preview = function () {
         const input = wrapper.getElementsByTagName('input')[0]
         const clearBtn = wrapper.querySelector('.clear-btn')
 
+        const handleCloseMenu = (e) => {
+            if (e.target === input) return;
+
+            if (clearBtn.contains(e.target)) input.value = '';
+            wrapper.classList.remove('active')
+            document.removeEventListener('click', handleCloseMenu)
+        }
+
         input.onkeyup = () => wrapper.classList.add('active')
 
-        // input.onblur = (e) => {
-        //     wrapper.classList.remove('active')
-        //     console.log('Input blur');
-        //     console.log(e)
-        // }
-
-        clearBtn.onclick = () => {
-            wrapper.classList.remove('active')
-            input.value = null
-        }
+        input.onfocus = () => document.addEventListener('click', handleCloseMenu)
 
     }()
 
