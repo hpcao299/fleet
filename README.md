@@ -1,5 +1,6 @@
 # Fleet
-![Website Appearance](./assets/images/Screen Shot 2022-08-13 at 17.19.29.png)
+
+![Website Appearance](./assets/images/website-appearance.png)
 
 ## Introduction
 
